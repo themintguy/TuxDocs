@@ -1,4 +1,4 @@
-name: Build Astro Docs
+name: Ci
 
 on:
   push:
@@ -25,11 +25,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Astro site
+      - name: Build site
         run: pnpm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist/
